@@ -1,0 +1,11 @@
+/vendor
+/node_modules
+Homestead.yaml
+.env
+/public/hotel/logs/*
+/public/hotel/!.gitkeep
+/public/hotel/node_modules/
+/public/hotel/bower_components/
+/public/hotel/tmp
+/public/hotel/.DS_Store
+/public/hotel/.idea

@@ -1,0 +1,67 @@
+<div class="row">
+    <h3 class="teal-text center">Room admin</h3>
+</div>
+<div class="row">
+    <div class="col m6 s12">
+        <div class="card-panel">
+            <span class="card-title"><h5>Create new room Type</h5></span>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input ng-model="new_type.name" id="name" type="text" >
+                    <label for="name">Room Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input ng-model="new_type.short_name" id="short_name" type="text" >
+                    <label for="short_name">Short Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input ng-model="new_type.base_price" id="base_price" type="text" >
+                    <label for="name">Base price</label>
+                </div>
+                <div class="input-field col s6">
+                    <input ng-model="new_type.base_availability" id="base_availability" type="text" >
+                    <label for="base_availability">Base availability</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input ng-model="new_type.max_occupancy" id="max_occupancy" type="text" >
+                    <label for="max_occupancy">Max occupancy</label>
+                </div>
+            </div>
+            <button class="btn" ng-click="create()">Create</button>
+        </div>
+    </div>
+
+    <div class="col m6 s12">
+        <div class="card-panel">
+            <span class="card-title"><h5>Set price for room Types</h5></span>
+            <div class="collection">
+                <a href="" ng-repeat="room_type in room_types" ng-class="{active: $index==selected_idx}" class="collection-item" ng-click="select_type($index)">{{room_type.name}}</a>
+            </div>
+            <div class="row" ng-if="selected_idx>=0">
+                <span class="card-title">Set price for {{ selected_type.name}}</span>
+                <div class="input-field">
+                    <label for="start_dt">Start Date</label>
+                    <input input-date type="text" id="start_dt" ng-model="update_data.start_dt"  on-set="onStartSet()"  />
+                </div>
+                <div class="input-field">
+                    <label for="end_dt">End Date</label>
+                    <input input-date type="text"  id="end_dt" ng-model="update_data.end_dt" on-set="onEndSet()" />
+                </div>
+                <div class="input-field">
+                    <label for="rate">Price</label>
+                    <input type="text"  id="rate" ng-model="update_data.price"  />
+                </div>
+                <button class="btn" ng-click="setprice()">Set</button>
+            </div>
+            <div class="row" ng-if="message!=null">
+                <div class="card-panel">
+                    <span class="blue-text text-darken-2">{{message}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
