@@ -11,4 +11,7 @@ class RoomCalendar extends Model
     function RoomType(){
         return $this->hasOne('App\RoomType');
     }
+
+
+
 }
