@@ -5,5 +5,6 @@ The tutorial will explain how to create an hotel booking system from scratch usi
 
 ## Tutorial articles
 * [Part 1 - Setup Laravel and Datamodel](http://www.codetutorial.io/hotel-booking-with-laravel-5-and-angularjs-p1/)
-* [Part 2 - Setup AngularJS ](http://www.codetutorial.io/hotel-booking-engine-with-laravel-5-and-angularjs-p2/)
+* [Part 2 - Setup AngularJS](http://www.codetutorial.io/hotel-booking-engine-with-laravel-5-and-angularjs-p2/)
+* [Part 3 - Complete the reservation system ](http://www.codetutorial.io/hotel-booking-engine-with-laravel-5-and-angularjs-part3/)
 
