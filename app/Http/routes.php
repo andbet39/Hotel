@@ -18,6 +18,9 @@ Route::get('/', function () {
 Route::group(['prefix' => 'api'], function() {
     Route::post('searchavailabity', 'RoomCalendarController@searchAvailability');
     Route::post('createreservation', 'ReservationController@createReservation');
+    Route::get('reservation/{id}', 'ReservationController@show');
+    Route::post('payreservation', 'PaymentController@pay');
+
 });
 
 Route::group(['prefix' => 'adminapi'], function()

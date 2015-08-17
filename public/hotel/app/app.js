@@ -8,11 +8,15 @@ angular.module('myApp', [
   'myApp.version',
   'myApp.roomAdmin',
   'myApp.book',
-  'myApp.finalize'
+  'myApp.finalize',
+    'myApp.pay','angularPayments'
 ]).
 config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/room_type'});
-}])
+
+      $routeProvider.otherwise({redirectTo: '/room_type'});
+
+    }])
+
 
 
 .service('reservationData', function () {
