@@ -16,7 +16,6 @@
 
   <link rel="stylesheet" href="app.css">
   <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 
 </head>
 <body>
@@ -33,18 +32,16 @@
 </nav>
 
 <div ng-view></div>
-
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
 <script type="text/javascript">
   Stripe.setPublishableKey('pk_test_p0QQDCeJQA7W9X9y0VP7QOz5');
-
 </script>
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/materialize/dist/js/materialize.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-materialize/src/angular-materialize.js"></script>
-<script type="text/javascript" src="bower_components/angular-payments/lib/angular-payments.js">
-</script>
+<script src="bower_components/angular-payments/lib/angular-payments.js"></script>
 
 
 <script src="app.js"></script>

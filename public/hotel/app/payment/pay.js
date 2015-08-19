@@ -15,23 +15,18 @@ angular.module('myApp.pay', ['ngRoute','ui.materialize'])
         $scope.paid = false;
 
         $scope.handleStripe = function(status, response){
-            console.log('Handle stripe');
-
             if(response.error) {
-                // there was an error. Fix it.
+                $scope.paid= false;
+                $scope.message = "Error from Stripe.com"
             } else {
-                // got stripe token, now charge it or smt
                 console.log(response.id);
                 var $payInfo = {
                     'token' : response.id,
                     'customer_id' : $scope.reservation_info.customer_id,
                     'total':$scope.reservation_info.total_price
-
                 };
 
                 $http.post('/api/payreservation', $payInfo).success(function(data){
-
-                    console.log(data);
                     if(data.status=="OK"){
                         $scope.paid= true;
                         $scope.message = data.message;
@@ -39,7 +34,6 @@ angular.module('myApp.pay', ['ngRoute','ui.materialize'])
                         $scope.paid= false;
                         $scope.message = data.message;
                     }
-
                 });
 
             }
@@ -47,15 +41,13 @@ angular.module('myApp.pay', ['ngRoute','ui.materialize'])
 
         $scope.init = function(){
 
-             $scope.loaded = false;
+            $scope.loaded = false;
 
             $http.get('/api/reservation/'+$scope.res_id).success(function(data){
                 $scope.reservation_info = data;
                 console.log(data);
                 $scope.loaded=true;
             });
-
-
         };
 
         $scope.init();

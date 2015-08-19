@@ -3,13 +3,11 @@
 </div>
 
 
-<div class="row"  >
-    <div class="col s12 m4 offset-m4" >
+<div class="row" ng-if="!paid">
+    <div class="col s12 m4 offset-m4">
         <div class="card-panel">
-
             <form stripe-form="handleStripe" name="myForm">
                 <div class="row">
-
                     <div class="input-field col s12">
                         <label for="name">Name on card </label>
                         <input type="text" id="name">
@@ -21,25 +19,28 @@
                     </div>
                 </div>
                 <div class="row">
-
                     <div class="input-field col s6">
                         <label for="exp">Expiry</label>
                         <input type="text" id="exp" ng-model="expiry" payments-validate="expiry" payments-format="expiry" />
                     </div>
-
                     <div class="input-field col s6">
                         <label for="cvc">CVC</label>
                         <input type="text" id="cvc" ng-model="cvc" payments-validate="cvc" payments-format="cvc" payments-type-model="type"/>
                     </div>
                 </div>
-
-
                 <div class="row">
                     <div class="input-field col s12">
                         <button ng-if='loaded==true && paid==false' type="submit" class="btn btn-primary btn-large">Pay {{reservation_info.total_price}}</button>
-                        <p ng-if="paid">{{message}}</p>
                     </div>
                 </div>
             </form>
         </div>
-    </div></div>
+    </div>
+</div>
+<div class="row"  ng-if="paid">
+    <div class="col s12 m4 offset-m4">
+        <div class="card-panel">
+    <h2><p>{{message}}</p></h2>
+        </div>
+    </div>
+</div>

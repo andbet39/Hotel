@@ -42,7 +42,7 @@
     <div class="col s12 m4 offset-m4" ng-if="reser_done">
         <div class="card blue darken-2">
             <div class="card-content white-text">
-                <span class="card-title"> <h2>Reservation Done</h2></span>
+                <span class="card-title"> <h2>Reservation</h2></span>
                 <h4>Customer info</h4>
                 <p>Name : {{reservation_info.customer.first_name}}</p>
                 <p>Last name : {{reservation_info.customer.last_name}}</p>
@@ -56,8 +56,8 @@
                 <p ng-repeat="night in reservation_info.nights">
                     Day {{night.day}}  -  Rate : {{night.rate}}
                 </p>
+                <a href="#/pay/{{reservation_info.id}}" style="text-align: center"><button class="btn">Pay ${{reservation_info.total_price}}</button></a>
             </div>
-            <a href="#/pay/{{reservation_info.id}}"><button>Pay</button></a>
         </div>
     </div>
 </div>

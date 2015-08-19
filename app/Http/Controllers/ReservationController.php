@@ -16,10 +16,7 @@ class ReservationController extends Controller
 {
 
     public function show($id){
-        Reservation::find($id);
-
         return  Reservation::find($id);
-
     }
 
     public function createReservation(Request $request){

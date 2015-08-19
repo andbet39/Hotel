@@ -31,9 +31,6 @@ class PaymentController extends Controller
             $mess = ['status' => "ERROR","message" =>"Error submitting payment"];
             return $mess;
         }
-
-
     }
-
 
 }
